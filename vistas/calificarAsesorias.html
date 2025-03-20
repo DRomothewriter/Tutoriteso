@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificar Asesorías</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!-- FontAwesome para iconos -->
+    <style>
+        body {
+            background-color: #f0f8ff; /* Azul pastel muy suave */
+        }
+
+        .card-header {
+            background-color: #4e73df; /* Azul más fuerte para el encabezado */
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #2e5c99; /* Azul más oscuro para mejor contraste en el botón */
+            border-color: #2e5c99;
+        }
+
+        .btn-secondary {
+            background-color: #e1f0ff; /* Azul pastel más claro */
+            border-color: #e1f0ff;
+            color: #495057;
+        }
+
+        .form-control:focus {
+            border-color: #2e5c99; /* Azul más oscuro al enfocar */
+            box-shadow: 0 0 0 .2rem rgba(46, 92, 153, 0.25); /* Efecto de enfoque */
+        }
+
+        .form-label {
+            color: #495057; /* Gris oscuro para etiquetas */
+        }
+        
+        .star-rating .fa.checked {
+            color: #ffbb33; /* Estrellas doradas cuando están seleccionadas */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header text-center py-4">
+                <h3><i class="fa-star fas"></i> Calificar Asesorías</h3>
+            </div>
+            <div class="card-body bg-white">
+                <h5>Lista de asesorías pasadas</h5>
+
+                <!-- Lista de asesorías -->
+                <div class="list-group mb-4">
+                    <!-- Asesoría 1 -->
+                    <div class="list-group-item">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span><strong>Asesoría de Tecnología - 12/03/2025</strong></span>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calificarModal1">Calificar</button>
+                        </div>
+                    </div>
+
+                    <!-- Asesoría 2 -->
+                    <div class="list-group-item">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span><strong>Asesoría de Negocios - 10/03/2025</strong></span>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calificarModal2">Calificar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para calificar Asesoría 1 -->
+                <div class="modal fade" id="calificarModal1" tabindex="-1" aria-labelledby="calificarModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="calificarModalLabel">Calificar Asesoría: Tecnología</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>Calificación</h6>
+                                <div class="mb-3 star-rating" data-rating="0">
+                                    <i class="fa fa-star" data-value="1"></i>
+                                    <i class="fa fa-star" data-value="2"></i>
+                                    <i class="fa fa-star" data-value="3"></i>
+                                    <i class="fa fa-star" data-value="4"></i>
+                                    <i class="fa fa-star" data-value="5"></i>
+                                </div>
+
+                                <h6>Comentario</h6>
+                                <textarea class="form-control" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Enviar Calificación</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para calificar Asesoría 2 -->
+                <div class="modal fade" id="calificarModal2" tabindex="-1" aria-labelledby="calificarModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="calificarModalLabel">Calificar Asesoría: Negocios</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>Calificación</h6>
+                                <div class="mb-3 star-rating" data-rating="0">
+                                    <i class="fa fa-star" data-value="1"></i>
+                                    <i class="fa fa-star" data-value="2"></i>
+                                    <i class="fa fa-star" data-value="3"></i>
+                                    <i class="fa fa-star" data-value="4"></i>
+                                    <i class="fa fa-star" data-value="5"></i>
+                                </div>
+
+                                <h6>Comentario</h6>
+                                <textarea class="form-control" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Enviar Calificación</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función para manejar la calificación con estrellas
+        document.querySelectorAll('.star-rating .fa').forEach(star => {
+            star.addEventListener('click', function() {
+                let ratingValue = this.getAttribute('data-value');
+                let stars = this.parentElement.querySelectorAll('.fa');
+                
+                // Marcar las estrellas seleccionadas
+                stars.forEach(star => {
+                    star.classList.remove('checked');
+                    if (star.getAttribute('data-value') <= ratingValue) {
+                        star.classList.add('checked');
+                    }
+                });
+                // Guardar la calificación seleccionada en el atributo data-rating
+                this.parentElement.setAttribute('data-rating', ratingValue);
+            });
+        });
+    </script>
+
+</body>
+</html>
